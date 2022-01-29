@@ -4,9 +4,9 @@ include "koneksi.php";
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ESQ/QUALITY SPV</title>
+        <title>ESQ/QUALITY LEADER</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="spv.css">
+        <link rel="stylesheet" href="leader.css">
         <!-- Boxiocns CDN Link -->
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,9 +41,9 @@ include "koneksi.php";
 
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">PRODUCTION</a></li>
-                    <li><a href="../../production/manager/">Manager</a></li>
-                    <li><a href="../../production/spv/">SPV</a></li>
-                    <li><a href="../../production/leader/">Leader</a></li>
+                    <li><a href="../manager/">Manager</a></li>
+                    <li><a href="../spv/">SPV</a></li>
+                    <li><a href="index.php">Leader</a></li>
                 </ul>
                 </li>
                 <li>
@@ -57,9 +57,9 @@ include "koneksi.php";
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">ESQ/QUALITY</a></li>
                     <li><a href="../manager/">Manager</a></li>
-                    <li><a href="index.php">SPV</a></li>
+                    <li><a href="../spv/">SPV</a></li>
                     <li><a href="../staff/">Staff</a></li>
-                    <li><a href="../leader/">Leader</a></li>
+                    <li><a href="index.php">Leader</a></li>
                     <li><a href="../admin/">Admin</a></li>
                 </ul>
                 </li>
@@ -159,7 +159,7 @@ include "koneksi.php";
             </div>
             
             <div class="upload-content">
-                <h1>Upload File PDF ESQ/QUALITY SPV</h1>
+                <h1>Upload File PDF ESQ/QUALITY LEADER</h1>
                 <hr>
                 <form action="upload.php" method="POST" enctype="multipart/form-data">
                     <table width="600" border="0">

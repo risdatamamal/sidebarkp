@@ -4,9 +4,9 @@ include "koneksi.php";
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ESQ/QUALITY SPV</title>
+        <title>MAINTANCE MANAGER</title>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="spv.css">
+        <link rel="stylesheet" href="manager.css">
         <!-- Boxiocns CDN Link -->
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,11 +56,11 @@ include "koneksi.php";
                 </div>
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">ESQ/QUALITY</a></li>
-                    <li><a href="../manager/">Manager</a></li>
-                    <li><a href="index.php">SPV</a></li>
-                    <li><a href="../staff/">Staff</a></li>
-                    <li><a href="../leader/">Leader</a></li>
-                    <li><a href="../admin/">Admin</a></li>
+                    <li><a href="../../esq_quality/manager/">Manager</a></li>
+                    <li><a href="../../esq_quality/spv/">SPV</a></li>
+                    <li><a href="../../esq_quality/staff/">Staff</a></li>
+                    <li><a href="../../esq_quality/leader/">Leader</a></li>
+                    <li><a href="../../esq_quality/admin/">Admin</a></li>
                 </ul>
                 </li>
                 <li>
@@ -73,11 +73,11 @@ include "koneksi.php";
                 </div>
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">MAINTANCE</a></li>
-                    <li><a href="#">Manager</a></li>
-                    <li><a href="#">SPV</a></li>
-                    <li><a href="#">Staff</a></li>
-                    <li><a href="#">Leader</a></li>
-                    <li><a href="#">Admin</a></li>
+                    <li><a href="index.php">Manager</a></li>
+                    <li><a href="../spv/">SPV</a></li>
+                    <li><a href="../staff/">Staff</a></li>
+                    <li><a href="../leader/">Leader</a></li>
+                    <li><a href="../admin/">Admin</a></li>
                 </ul>
                 </li>
             <li>
@@ -146,6 +146,7 @@ include "koneksi.php";
             </li>
             <li>
             <div class="profile-details">
+
                 <i class=' bx bx-log-out' > Logout</i>
             </div>
             </li>
@@ -159,49 +160,16 @@ include "koneksi.php";
             </div>
             
             <div class="upload-content">
-                <h1>Upload File PDF ESQ/QUALITY SPV</h1>
-                <hr>
-                <form action="upload.php" method="POST" enctype="multipart/form-data">
-                    <table width="600" border="0">
-                        <tr>
-                            <td width="100">Judul File</td>
-                            <td><input type="text" name="judul" placeholder="Judul" required></td>
-                        </tr>
-                        <tr>
-                            <td width="100">File PDF</td>
-                            <td><input type="file" name="nama_file" required></td>
-                        </tr>
-                        <tr>
-                            <td width="100"></td>
-                            <td><input type="submit" value="Upload File"></td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-
-            <div class="list-upload-content">
-                <hr>
-                <h1>List File PDF</h1>
-                <table width="800" border='0' cellpadding="2" cellspacing="1" bgcolor="#000000">
-                    <tr>
-                        <th bgcolor="#ffffff">Judul</th>
-                        <th bgcolor="#ffffff" width="100">View</th>
-                        <th bgcolor="#ffffff" width="100">Hapus</th>
-                    </tr>
                 <?php
-                $query = mysqli_query($koneksi,"SELECT * FROM data_file ORDER BY id DESC");
-                while($data=mysqli_fetch_array($query))
-                {
+                $id    = mysqli_real_escape_string($koneksi,$_GET['id']);
+                $query = mysqli_query($koneksi,"SELECT * FROM data_file WHERE id='$id' ");
+                $data  = mysqli_fetch_array($query);
                 ?>
-                    <tr>
-                        <td bgcolor="#ffffff"><?php echo $data['judul'];?></td>
-                        <th bgcolor="#ffffff"><a href="view.php?id=<?php echo $data['id'];?>">Lihat File</a></th>
-                        <th bgcolor="#ffffff"><a href="hapus.php?id=<?php echo $data['id'];?>">Hapus File</a></th>
-                    </tr>
-                <?php
-                }
-                ?>
-                </table>
+                <h1>Upload File PDF MAINTANCE MANAGER</h1>
+                <hr>
+                <b>Judul:</b> <?php echo $data['judul'];?> | <a href='index.php'> Kembali </a>
+                <hr>
+                <embed src="file/<?php echo $data['nama_file'];?>" type="application/pdf" width="800" height="600" >
             </div>
 
         </section>
@@ -222,5 +190,4 @@ include "koneksi.php";
             });
         </script>
     </body>
-
 </html>

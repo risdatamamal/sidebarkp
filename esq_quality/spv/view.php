@@ -58,9 +58,9 @@ include "koneksi.php";
                     <li><a class="link_name" href="#">ESQ/QUALITY</a></li>
                     <li><a href="../manager/">Manager</a></li>
                     <li><a href="index.php">SPV</a></li>
-                    <li><a href="#">Staff</a></li>
-                    <li><a href="#">Leader</a></li>
-                    <li><a href="#">Admin</a></li>
+                    <li><a href="../staff/">Staff</a></li>
+                    <li><a href="../leader/">Leader</a></li>
+                    <li><a href="../admin/">Admin</a></li>
                 </ul>
                 </li>
                 <li>
