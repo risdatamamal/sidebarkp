@@ -1,3 +1,13 @@
+<?php 
+ 
+session_start();
+ 
+if (!isset($_SESSION['username'])) {
+    header("Location: login.php");
+}
+ 
+?>
+
 <!DOCTYPE html> 
 <html lang="en" dir="ltr">
   <head>
@@ -6,7 +16,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- Boxiocns CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    </head>
 <body>
   <div class="sidebar close">
@@ -142,8 +152,7 @@
       </li>
       <li>
     <div class="profile-details">
-
-      <i class=' bx bx-log-out' > Logout</i>
+      <a href="logout.php" class="btn"><i class='bx bx-log-out'>Logout</i></a>
     </div>
   </li>
 </ul>
