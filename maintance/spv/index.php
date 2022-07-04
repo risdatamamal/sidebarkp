@@ -146,7 +146,7 @@ include "koneksi.php";
             </li>
             <li>
             <div class="profile-details">
-                <i class=' bx bx-log-out' > Logout</i>
+                <a href="logout.php" class="btn"><i class='bx bx-log-out'>Logout</i></a>
             </div>
             </li>
             </ul>
